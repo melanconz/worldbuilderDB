@@ -6,10 +6,16 @@
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  
+
 </head>
 <body>
-  <app-root>Loading...</app-root>
+  <md-content class="md-padding">
+    <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+      <md-nav-item md-nav-click="goto('home')" name="home">Home</md-nav-item>
+      <md-nav-item md-nav-click="goto('signUp')" name="signUp">Sign Up</md-nav-item>
+      <md-nav-item md-nav-click="got('logIn')" name="logIn">Log In</md-nav-item>
+    </md-nav-bar>
+    <app-root>Loading...</app-root>
+  </md-content>
 </body>
 </html>

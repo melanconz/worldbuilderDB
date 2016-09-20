@@ -1,3 +1,28 @@
-<h1>
+<h1 class="title">
   {{title}}
 </h1>
+
+<h2>My Creations</h2>
+<ul class="creations">
+  <li *ngFor="let creation of creations" [class.selected]="creation === selectedCreation"
+ (click)="onSelect(creation)">
+    <span class="badge">{{ creation.id }}</span> {{ creation.name }}
+  </li>
+</ul>
+<div *ngIf="selectedCreation">
+  <h2>
+    {{selectedCreation.name}}'s Details
+  </h2>
+  <div>
+    <label>
+      id:
+    </label>
+     {{selectedCreation.id}}
+  </div>
+  <div>
+    <label>
+      name:
+    </label>
+    <input [(ngModel)]="selectedCreation.name" placeholder="name" />
+  </div>
+</div>
